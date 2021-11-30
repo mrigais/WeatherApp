@@ -8,6 +8,7 @@ const geoCode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 
 const express = require('express')
+const port = process.env.PORT || 3000
 /*Loding the express library
 express variable is a function not object like other library objects
 it calls application, which has methods in it. example - app variable
@@ -72,8 +73,10 @@ app.get('/weather', (req, res) =>{
     }
 
     forecast(latitude, longitude, (error, foreCastData) => {
-      console.log(latitude)
-      console.log(longitude)
+      console.log(foreCastData)
+      // return res.send(foreCastData)
+      // console.log(latitude)
+      // console.log(longitude)
       if(error){
        return  res.send({error})
       }
@@ -124,7 +127,7 @@ app.get('*', (req, res) =>{
 
 })
 
-app.listen(3000, ()=>{
-  console.log('--------------------------------------------server is up and running at port 3000---------------------------------------')
+app.listen(port, ()=>{
+  console.log('--------------------------------------------server is up and running at port'+ port + '---------------------------------------')
 })
 

@@ -109,3 +109,9 @@ input:focus ~ .floating-label,
 input:not(:focus):valid ~ .floating-label {
   top: -6px;
 }
+p {
+  font-family: sans-serif;
+  font-size: 25px;
+
+}
+

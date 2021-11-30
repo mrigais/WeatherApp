@@ -5,8 +5,6 @@ const geoCode = (address, callback)=>{
 
     request({url: url, json:true}, (error, response)=> { // the second argument, function, passed to the request executes after the request completes
         //since, we using return here won't be of any help as it'll be called inside request and not geoCode, we'll use callback
-        console.log('askjdfn')
-        // console.log(response)
         if(error){
             callback('Unable to connect', undefined)
         }else if(response.body.features.length == 0){
